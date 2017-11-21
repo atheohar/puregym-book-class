@@ -1,4 +1,6 @@
 # puregym-book-class
+This application is a scheduler that uses a docker container with firefox and selenium to book classes on the puregym website
+
 How to run
 Change application.yml file and set the name of the classes you would like to book for each day. 
 If you dont want to book a class for that day set it to "" e.g   sunday: ""
