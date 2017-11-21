@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath('se.transmode.gradle:gradle-docker:1.2')
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+group = 'com.atheohar'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.seleniumhq.selenium:selenium-api:3.5.2')
+	compile('org.seleniumhq.selenium:selenium-remote-driver:3.5.2')
+	compile('org.seleniumhq.selenium:selenium-firefox-driver:3.5.2')
+	compile('org.seleniumhq.selenium:selenium-htmlunit-driver:2.52.0')
+	compile('org.springframework.boot:spring-boot-starter-test')
+}
+
+task buildDocker(type: Docker, dependsOn: build) {
+  applicationName = jar.baseName
+  dockerfile = file('Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into "${stageDir}/build/libs"
+    }
+  }
+}

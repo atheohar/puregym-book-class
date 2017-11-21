@@ -1,0 +1,20 @@
+gym:
+  user: ${USER:user}
+  code: ${PASS:pass}
+  frequency: ${FREQ:0 * 0 * * ?}
+  monday:
+    "Pure Bootcamp"
+  tuesday:
+    "Pure Pump"
+  wednesday:
+    "Pure Fat burn"
+  thursday:
+    "Pure Pump"
+  friday:
+    "Pure Abs"
+  saturday:
+    ""
+  sunday:
+    ""
+    
+  
