@@ -9,3 +9,5 @@ Run docker build with the appropriate tag e.g myproject/gymbooking "docker build
 Run the docker image passing your user, password and frequency in cron format that the class booking logic will run
 "docker run -it -e USER="myUser" -e PASS="myPass" -e FREQ="* * * * * ?" myproject/gymbooking"
 By default it will run at midninght 0 * 0 * * ?
+
+An AWS elastic beanstalk docker file is included to be able to deploy it there Dockerrun.aws.json
