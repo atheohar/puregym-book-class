@@ -153,7 +153,11 @@ public class BookClass {
     }
 
     Integer currentDay = localCalendar.get(Calendar.DATE);
-    date += " " + currentDay.toString();
+    if (currentDay > 9) {
+      date += " " + currentDay.toString();
+    } else {
+      date += " 0" + currentDay.toString();
+    }
     Integer currentMonth = localCalendar.get(Calendar.MONTH) + 1;
     date += "/" + currentMonth.toString();
 
