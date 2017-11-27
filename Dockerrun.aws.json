@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-        "Name": "atheohar/gymbooking:latest"
+        "Name": "atheohar/gymbooking:1"
     },
     "Ports": [
         {
