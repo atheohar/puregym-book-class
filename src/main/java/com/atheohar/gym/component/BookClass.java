@@ -28,6 +28,8 @@ public class BookClass {
 
   @Value("${gym.user}")
   private String user;
+  @Value("${gym.daysBefore}")
+  private Integer daysBefore;
   @Value("${gym.code}")
   private String code;
   @Value("${gym.monday}")
@@ -60,7 +62,7 @@ public class BookClass {
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
     Calendar localCalendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/London"));
-    localCalendar.add(Calendar.DATE, 7);
+    localCalendar.add(Calendar.DATE, daysBefore);
 
     SessionInfo sessionInfo = getSessionInfo(localCalendar);
 
